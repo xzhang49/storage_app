@@ -22,13 +22,15 @@ class ListProductComponent extends Component {
                 <h2 className="text-center">Products List</h2>
                 <div className = "row">
                 <table className = "table table-striped table-bordered">
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Sku Number</th>
-                        <th>Quantity</th>
-                        <th>Location</th>
-                        <th>Actions</th>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Sku Number</th>
+                            <th>Quantity</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tbody>
                     <tbody>
                         {
                             this.state.products.map(
