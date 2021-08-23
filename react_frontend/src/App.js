@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import ListEmployeeComponent from './components/ListEmployeeComponent';
 
 function App() {
   return (
-    <div className="App">
-      <div>Hello world !</div>
+    <div className="container">
+      <ListEmployeeComponent />
     </div>
   );
 }
