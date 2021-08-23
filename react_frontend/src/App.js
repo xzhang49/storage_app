@@ -1,10 +1,10 @@
 import './App.css';
-import ListEmployeeComponent from './components/ListEmployeeComponent';
+import ListProductComponent from './components/ListProductComponent';
 
 function App() {
   return (
     <div className="container">
-      <ListEmployeeComponent />
+      <ListProductComponent />
     </div>
   );
 }

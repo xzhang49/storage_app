@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import ProductService from '../services/ProductService'
 
-export default class ListEmployeeComponent extends Component {
+class ListProductComponent extends Component {
     constructor(props) {
         super(props)
 
@@ -8,6 +9,13 @@ export default class ListEmployeeComponent extends Component {
             products: []
         }
     }
+
+    componentDidMount(){
+        ProductService.getProducts().then((res) => {
+            this.setState({ products: res.data});
+        });
+    }
+
     render() {
         return (
             <div>
@@ -17,7 +25,7 @@ export default class ListEmployeeComponent extends Component {
                     <tr>
                         <th>Product Name</th>
                         <th>Sku Number</th>
-                        <th>Quantiy</th>
+                        <th>Quantity</th>
                         <th>Location</th>
                         <th>Actions</th>
                     </tr>
@@ -28,7 +36,7 @@ export default class ListEmployeeComponent extends Component {
                                 <tr key = {product.id}>
                                     <td> { product.productName } </td> 
                                     <td> { product.skuNumber } </td> 
-                                    <td> { product.quaitity } </td> 
+                                    <td> { product.quantity } </td> 
                                     <td> { product.location}  </td> 
                                 </tr>
                             )
@@ -40,3 +48,5 @@ export default class ListEmployeeComponent extends Component {
         )
     }
 }
+
+export default ListProductComponent
