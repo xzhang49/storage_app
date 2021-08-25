@@ -9,6 +9,17 @@ class ListProductComponent extends Component {
             products: []
         }
         this.addProduct = this.addProduct.bind(this);
+        this.editProduct = this.editProduct.bind(this);
+        this.deleteProduct = this.deleteProduct.bind(this);
+    }
+
+    deleteProduct(id){
+        ProductService.deleteProduct(id).then( res => {
+            this.setState({products: this.state.products.filter(product => product.id !== id)});
+        });
+    }
+    editProduct(id){
+        this.props.history.push(`/add-product/${id}`);
     }
 
     componentDidMount(){
@@ -49,6 +60,10 @@ class ListProductComponent extends Component {
                                         <td> { product.skuNumber } </td> 
                                         <td> { product.quantity } </td> 
                                         <td> { product.location}  </td> 
+                                        <td>
+                                            <button onClick={ () => this.editProduct(product.id)} className="btn btn-success">Update </button>
+                                            <button style={{marginLeft: "10px"}} onClick={ () => this.deleteProduct(product.id)} className="btn btn-danger">Delete </button>
+                                        </td>
                                     </tr>
                                 )
                             }
