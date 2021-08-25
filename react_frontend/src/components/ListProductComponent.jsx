@@ -37,7 +37,7 @@ class ListProductComponent extends Component {
             <div>
                 <h2 className="text-center">Products List</h2>
                 <div className = "text-left">
-                    <button className="btn btn-primary" onClick={this.addProduct}> Add Product</button>
+                    <button className="btn btn-success" onClick={this.addProduct}> Add Product</button>
                  </div>
                  <br></br>
                 <div className = "row">

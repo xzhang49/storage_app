@@ -82,7 +82,7 @@ class CreateProductComponent extends Component {
     render() {
         return (
             <div>
-                <br></br>
+                   <br></br>
                    <div className = "container">
                         <div className = "row">
                             <div className = "card col-md-6 offset-md-3 offset-md-3">
@@ -96,22 +96,25 @@ class CreateProductComponent extends Component {
                                             <input placeholder="Product Name" name="productName" className="form-control" 
                                                 value={this.state.productName} onChange={this.changeProductNameHandler}/>
                                         </div>
+                                        <br></br>
                                         <div className = "form-group">
                                             <label> Sku Number: </label>
                                             <input placeholder="Sku Number" name="skuNumber" className="form-control" 
                                                 value={this.state.skuNumber} onChange={this.changeSkuNumberHandler}/>
                                         </div>
+                                        <br></br>
                                         <div className = "form-group">
                                             <label> Quantity: </label>
                                             <input placeholder="Quantity" name="quantity" className="form-control" 
                                                 value={this.state.quantity} onChange={this.changeQuantityHandler}/>
                                         </div>
+                                        <br></br>
                                         <div className = "form-group">
                                             <label> Location: </label>
                                             <input placeholder="Location" name="location" className="form-control" 
                                                 value={this.state.location} onChange={this.changeLocationHandler}/>
                                         </div>
-
+                                        <br></br>
                                         <button className="btn btn-success" onClick={this.saveOrUpdateProduct}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>
